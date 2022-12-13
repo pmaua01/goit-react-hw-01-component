@@ -13,9 +13,9 @@ export const App = () => {
   return (
     <div
       style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
+        width: 620,
+        margin: "auto",
+
         fontSize: 20,
         color: "#010101",
       }}

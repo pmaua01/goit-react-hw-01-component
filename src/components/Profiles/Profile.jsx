@@ -13,26 +13,16 @@ import {
   StatsCount,
 } from "./Profiles.styled";
 
-export const Profile = ({
-  user: {
-    username,
-    tag,
-    location,
-    avatar,
-    stats: { followers, views, likes },
-  },
-}) => {
+export const Profile = ({ user }) => {
+  const { username, tag, location, avatar, stats } = user;
+
+  const { followers, views, likes } = stats;
+
   return (
     <ProfileCard>
       <ProfileInfo>
         <AvatarThumb>
-          <AvatarFoto
-            src={avatar}
-            alt="User avatar"
-
-            // height="150px"
-            // width="150px"
-          />
+          <AvatarFoto src={avatar} alt="User avatar" />
         </AvatarThumb>
         <ProfileName>{username}</ProfileName>
 
@@ -64,7 +54,6 @@ Profile.propTypes = {
     tag: PropTypes.string.isRequired,
     location: PropTypes.string.isRequired,
     avatar: PropTypes.string.isRequired,
-
     stats: PropTypes.shape({
       followers: PropTypes.number.isRequired,
       views: PropTypes.number.isRequired,

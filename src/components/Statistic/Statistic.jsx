@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 
-export const Statisctic = ({ data: { id, label, percentage } }) => {
+export const Statisctic = ({ data }) => {
+  const { label, percentage } = data;
   return (
     <>
       <span>{label}</span>
@@ -9,7 +10,9 @@ export const Statisctic = ({ data: { id, label, percentage } }) => {
   );
 };
 
-Statisctic.prototype = {
-  label: PropTypes.string.isRequired,
-  percentage: PropTypes.string.isRequired,
+Statisctic.propTypes = {
+  data: PropTypes.shape({
+    label: PropTypes.string.isRequired,
+    percentage: PropTypes.number.isRequired,
+  }),
 };

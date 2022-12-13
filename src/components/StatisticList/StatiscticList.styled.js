@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StatiscticListStyle = styled.ul`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 `;
 
 const random = () => {
